@@ -10,56 +10,6 @@ body {
   /* 淡いブルーのグラデで白を活かす */
 }
 
-/* 強制的に横並びにする（競合を潰す） */
-nav ul {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  overflow: visible;
-}
-
-nav ul li {
-  flex: 0 0 auto;
-  margin: 0;
-}
-
-nav ul li a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 16px;
-  min-width: 140px;
-  background-color: #ffffff;
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid #e0e8f0;
-  border-radius: 6px;
-  white-space: nowrap;
-  transition: all .2s ease;
-}
-
-nav ul li a:hover {
-  background-color: #0077cc;
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(0,119,204,0.3);
-}
-
-nav {
-  overflow-x: auto; /* 横幅オーバー時にスクロール */
-  background: #f8fbff;
-  border-radius: 8px;
-  padding: 12px 16px;
-  margin-bottom: 40px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-
-
 h1 {
   color: #2f3d60; /* 落ち着いたネイビー寄り */
   font-size: 2.5em;
@@ -101,16 +51,74 @@ img {
   border-radius: 8px;
 }
 
-/* スマホ等狭い画面では2段に折り返す */
+
+
+/* ハンバーガーボタン */
+.menu-toggle {
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* 共通 nav スタイル */
+#main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#main-nav li a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+  padding: 10px 14px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+/* --- スマホ表示用 --- */
 @media (max-width: 768px) {
-  nav ul {
-    flex-wrap: wrap; /* 折り返し許可 */
-    justify-content: center;
+  .menu-toggle {
+    display: block;
   }
 
-  nav ul li a {
-    flex: 1 1 calc(50% - 12px); /* だいたい2列に収まる幅 */
-    min-width: 0;
-    box-sizing: border-box;
+  #main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+  }
+
+  #main-nav.show {
+    display: flex;
+  }
+
+  #main-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #main-nav li a {
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  #main-nav li a:hover {
+    background-color: #005fa3;
   }
 }
