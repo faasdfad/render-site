@@ -1,79 +1,4 @@
-body {
-  font-family: sans-serif;
-  background-color: #eef7fb;    /* 淡いブルー：全体を優しく彩る */
-  padding: 50px;
-  margin: 0;
-  color: #2e3b4e;               /* 深めネイビーグレー：文字くっきり */
-  line-height: 1.8;
-  text-align: left;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-nav ul li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #0077cc;
-  font-weight: bold;
-}
-
-h1, h2, h3, p {
-  text-align: left;
-  margin-bottom: 1em;
-}
-
-h1 {
-  color: #2c3e50;
-  font-size: 2.5em;
-}
-
-footer {
-  margin-top: 50px;
-  font-size: 0.8em;
-  color: #888;
-}
-
-.highlight1 {
-  background-color: #fff8e1;
-  color: #e67e22;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-.highlight2 {
-  border-bottom: 2px solid #3498db;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-.highlight3 {
-  background: linear-gradient(to right, #fceabb, #f8b500);
-  padding: 0.2em 0.5em;
-  border-radius: 4px;
-  color: #000;
-  font-weight: bold;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 8px;
-}
-
-
-/* ハンバーガー：共通 */
+/* 共通ナビ（初期は非表示） */
 .menu-toggle {
   display: none;
   font-size: 20px;
@@ -87,78 +12,65 @@ img {
   margin-bottom: 10px;
 }
 
-/* 初期非表示 */
-.mobile-nav {
-  display: none;
-}
-
-.mobile-nav ul {
+.main-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
-.mobile-nav li a {
-  display: block;
-  background-color: #0077cc;
-  color: #fff;
-  text-align: center;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 18px;
+.main-nav li a {
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  color: #0077cc;
+  font-weight: bold;
+  padding: 10px 14px;
+  display: inline-block;
+  transition: background-color 0.3s;
 }
 
-.mobile-nav li a:hover {
-  background-color: #005fa3;
-}
-
-/* スマホのみ表示 */
+/* --- スマホ専用スタイル --- */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
 
-  .mobile-nav.show {
-    display: block;
-  }
-}
-
-
-@media (max-width: 768px) {
-  nav ul {
-    display: flex;
+  .main-nav {
+    display: none;
     flex-direction: column;
-    align-items: stretch;
     gap: 12px;
     padding: 0 15px;
     margin-bottom: 30px;
   }
 
-  nav ul li {
-    display: block;
-    margin: 0;
+  .main-nav.show {
+    display: flex;
   }
 
-  nav ul li a {
-    display: block;
+  .main-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav li a {
     background-color: #0077cc;
     color: #fff;
+    font-size: 18px;
     text-align: center;
-    padding: 16px;               /* タップしやすさ向上 */
     border-radius: 8px;
-    font-weight: bold;
-    font-size: 18px !important;             /* ←ここを大きく変更 */
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    padding: 16px;
   }
 
-  nav ul li a:hover {
+  .main-nav li a:hover {
     background-color: #005fa3;
+  }
+}
+
+/* --- PC用横並び --- */
+@media (min-width: 769px) {
+  .main-nav {
+    display: block;
   }
 }

@@ -9,16 +9,17 @@
 </head>
 <body>
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('mobile-nav');
-
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('show');
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('mobile-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
   });
 </script>
 <header>
   <div class="menu-toggle" id="menu-toggle">☰ メニュー</div>
-  <nav class="mobile-nav" id="mobile-nav">
+  <nav class="main-nav" id="mobile-nav">
     <ul>
       <li><a href="index.html">お酒買取の完全ガイド</a></li>
       <li><a href="page1.html">白州ほかウイスキー買取</a></li>
