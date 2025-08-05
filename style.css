@@ -73,6 +73,63 @@ img {
 }
 
 
+/* ハンバーガー：共通 */
+.menu-toggle {
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* 初期非表示 */
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-nav li a {
+  display: block;
+  background-color: #0077cc;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-nav li a:hover {
+  background-color: #005fa3;
+}
+
+/* スマホのみ表示 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-nav.show {
+    display: block;
+  }
+}
+
+
 @media (max-width: 768px) {
   nav ul {
     display: flex;
