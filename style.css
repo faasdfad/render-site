@@ -6,13 +6,13 @@ body {
   color: #4a4a4a;
   line-height: 1.8;
   text-align: left;
-  background-image: linear-gradient(135deg, #ffffcc 25%, #ffffff 75%);
+  background-image: linear-gradient(135deg, #ff99ff 25%, #ffffff 75%);
   /* 淡いブルーのグラデで白を活かす */
 }
 
 h1 {
   color: #2f3d60; /* 落ち着いたネイビー寄り */
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 footer {
