@@ -93,10 +93,10 @@ img {
     background-color: #0077cc;
     color: #fff;
     text-align: center;
-    padding: 12px;
+    padding: 16px;               /* タップしやすさ向上 */
     border-radius: 8px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;             /* ←ここを大きく変更 */
     text-decoration: none;
     transition: background-color 0.3s ease;
   }
