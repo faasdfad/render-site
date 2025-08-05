@@ -96,7 +96,7 @@ img {
     padding: 16px;               /* タップしやすさ向上 */
     border-radius: 8px;
     font-weight: bold;
-    font-size: 18px;             /* ←ここを大きく変更 */
+    font-size: 18px !important;             /* ←ここを大きく変更 */
     text-decoration: none;
     transition: background-color 0.3s ease;
   }
